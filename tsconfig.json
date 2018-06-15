@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["es2015"],
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "checkJs": true,
+    "module": "commonjs",
+    "allowJs": true,
+    "noEmit": true,
+    "alwaysStrict": true,
+    "typeRoots": ["node_modules/@types"],
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules", "**/node_modules/*"],
+  "include": ["bin/**/*.js", "lib/**/*.js", "test/**/*.js"],
+  "typeAcquisition": {
+    "enable": true
+  }
+}
