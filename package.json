@@ -1,5 +1,5 @@
 {
-  "name": "mongo-cache",
+  "name": "mongo-cache-example",
   "version": "0.0.0",
   "description": "",
   "main": "bin/run.js",
@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SkeLLLa/mongo-cache.git"
+    "url": "git+https://github.com/SkeLLLa/mongo-cache-example.git"
   },
   "bugs": {
-    "url": "https://github.com/SkeLLLa/mongo-cache/issues"
+    "url": "https://github.com/SkeLLLa/mongo-cache-example/issues"
   },
-  "homepage": "https://github.com/SkeLLLa/mongo-cache#readme",
+  "homepage": "https://github.com/SkeLLLa/mongo-cache-example#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "config": "^1.30.0",
