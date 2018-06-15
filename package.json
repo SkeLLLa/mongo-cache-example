@@ -10,7 +10,7 @@
     "changelog": "changelog",
     "check-branch": "if test \"$(git rev-parse --abbrev-ref HEAD)\" = \"$npm_package_config_releaseBranch\" ; then exit 0 ; else  echo \"Not on '$npm_package_config_releaseBranch' branch\" && exit 1 ; fi",
     "version": "changelog && git add -u",
-    "preversion": "npm run check-branch && npm run lint && nm run check && npm run test",
+    "preversion": "npm run check-branch && npm run lint && npm run check && npm run test",
     "postversion": "git push && git push --tags",
     "lint": "eslint .",
     "test": "exit 0",
