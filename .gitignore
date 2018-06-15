@@ -9,3 +9,4 @@ creds
 typings
 docs
 .idea/
+config/local.js
