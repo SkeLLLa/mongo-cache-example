@@ -1,12 +1,52 @@
 {
   "name": "mongo-cache",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bin/run.js",
+  "config": {
+    "releaseBranch": "master"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "changelog": "changelog",
+    "check-branch": "if test \"$(git rev-parse --abbrev-ref HEAD)\" = \"$npm_package_config_releaseBranch\" ; then exit 0 ; else  echo \"Not on '$npm_package_config_releaseBranch' branch\" && exit 1 ; fi",
+    "version": "changelog && git add -u",
+    "preversion": "npm run check-branch && npm run lint && nm run check && npm run test",
+    "postversion": "git push && git push --tags",
+    "lint": "eslint .",
+    "test": "exit 0",
+    "check": "tsc",
+    "start": "node bin/run.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/config": "0.0.34",
+    "@types/express": "^4.16.0",
+    "@types/mongodb": "^3.0.19",
+    "@types/node": "^10.3.3",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "generate-changelog": "^1.7.1",
+    "typescript": "^2.9.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkeLLLa/mongo-cache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SkeLLLa/mongo-cache/issues"
+  },
+  "homepage": "https://github.com/SkeLLLa/mongo-cache#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "config": "^1.30.0",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "swagger-express-router": "^1.0.0",
+    "swagger-ui-express": "^3.0.9"
+  }
 }
